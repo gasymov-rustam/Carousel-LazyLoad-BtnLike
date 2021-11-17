@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Button from "./components/Button/Button";
+import "./App.css";
+import Carousel from "./components/Carousel/Carousel";
+import LazyLoad from "./components/LazyLoad/LazyLoad";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Carousel delay={2000} children={["one", 2, 3, "four", 5, 6]} />
+            <Carousel delay={2000} children={[]} />
+            <Button initLikeValue={20} initDisLikeValue={10} />
+            <LazyLoad />
+        </>
+    );
 }
 
 export default App;
